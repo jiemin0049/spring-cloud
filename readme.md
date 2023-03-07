@@ -5,3 +5,4 @@ Currency Conversion Service 8100, 8101, 8102
 Netflix Eureka Naming Server 8761
 Netflix Zuul API Gateway Server 8765
 Zipkin Distributed Tracing Server 9411
+
