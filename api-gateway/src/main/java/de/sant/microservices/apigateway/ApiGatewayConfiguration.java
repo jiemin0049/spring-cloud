@@ -5,10 +5,10 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class ApiGatewayConfiguration {
 
-    //@Bean
+    @Bean
     public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(
@@ -17,9 +17,8 @@ public class ApiGatewayConfiguration {
                                         .addRequestParameter("Param", "MyParam"))
                                 .uri("http://httpbin.org:80"))
                 .route(
-                        p->p.path("/currency-exchange-service/**")
-                                .uri("lb://currency-exchange-service")
-                )
+                        p->p.path("/currency-exchange/**")
+                                .uri("lb://currency-exchange-service"))
                 .build();
     }
 }
