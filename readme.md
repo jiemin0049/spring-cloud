@@ -12,3 +12,5 @@ Netflix Zuul API Gateway Server 8765
 
 Zipkin Distributed Tracing Server 9411
 
+"limits-service" gets config from git-localconfig-repo through "config-server" 
+
