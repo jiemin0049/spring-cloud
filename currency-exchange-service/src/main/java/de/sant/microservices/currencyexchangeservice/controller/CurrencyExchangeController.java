@@ -22,8 +22,11 @@ public class CurrencyExchangeController {
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
         ExchangeValue value = repository.findByFromAndTo(from, to);
+        if (value == null) {
+            throw new RuntimeException("Unable to find data from " + from + " to" + to);
+        }
         value.setPort(Integer.valueOf(environment.getProperty("local.server.port")));
-        logger.info("{}", value);
+        logger.info("Return value: {}", value);
         return value;
     }
 }
