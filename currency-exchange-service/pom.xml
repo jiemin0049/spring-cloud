@@ -103,6 +103,10 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+                    <image>
+                        <name>santan/mm-${project.artifactId}:${project.version}</name>
+                    </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>
 			</plugin>
 		</plugins>
